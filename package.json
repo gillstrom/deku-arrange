@@ -1,6 +1,6 @@
 {
   "name": "deku-arrange",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Arrange component for Deku. To be used with SUIT CSS components-arrange.",
   "license": "MIT",
   "repository": "gillstrom/deku-arrange",
