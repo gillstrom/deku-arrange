@@ -1,0 +1,93 @@
+{
+  "name": "deku-arrange",
+  "version": "0.0.0",
+  "description": "Arrange component for Deku. To be used with SUIT CSS components-arrange.",
+  "license": "MIT",
+  "repository": "gillstrom/deku-arrange",
+  "author": {
+    "name": "Andreas Gillström",
+    "email": "andreasgillstrom@gmail.com",
+    "url": "github.com/gillstrom"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "browserify example/index.js -o example/build.js -dv",
+    "prepublish": "babel lib --presets es2015,react --out-dir dist",
+    "test": "npm run prepublish && xo && ava"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "arrange",
+    "arranging",
+    "component",
+    "css",
+    "deku",
+    "deku-component",
+    "dekujs",
+    "row",
+    "suit",
+    "suitcss"
+  ],
+  "dependencies": {
+    "magic-virtual-element": "^1.0.6"
+  },
+  "devDependencies": {
+    "assert-element": "^0.3.1",
+    "ava": "*",
+    "babel-cli": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "component-mock": "^0.1.0",
+    "cssnextify": "^1.0.3",
+    "deku": "^1.0.0",
+    "eslint-config-xo-react": "^0.3.0",
+    "eslint-plugin-react": "^3.15.0",
+    "suitcss-base": "^1.0.1",
+    "suitcss-components-arrange": "^1.1.0",
+    "xo": "*"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ],
+      "cssnextify"
+    ]
+  },
+  "xo": {
+    "envs": [
+      "browser",
+      "node"
+    ],
+    "esnext": true,
+    "extends": [
+      "xo-react"
+    ],
+    "ignores": [
+      "dist",
+      "example/**"
+    ],
+    "rules": {
+      "jsx-quotes": [
+        2,
+        "prefer-single"
+      ],
+      "react/no-unknown-property": 0,
+      "react/prop-types": 0,
+      "quote-props": 0
+    }
+  }
+}

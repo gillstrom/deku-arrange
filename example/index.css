@@ -1,0 +1,15 @@
+@import 'suitcss-base';
+@import 'suitcss-components-arrange';
+
+.Foo,
+.Bar {
+	padding: 20px;
+}
+
+.Foo {
+	background-color: Moccasin;
+}
+
+.Bar {
+	background-color: Tomato;
+}
