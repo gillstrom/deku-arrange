@@ -13,7 +13,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "build": "browserify example/index.js -o example/build.js -dv",
+    "build": "browserify example/index.js -o example/build.js -dv -t cssnextify",
     "prepublish": "babel lib --presets es2015,react --out-dir dist",
     "test": "npm run prepublish && xo && ava"
   },
@@ -63,8 +63,7 @@
             "react"
           ]
         }
-      ],
-      "cssnextify"
+      ]
     ]
   },
   "xo": {
