@@ -13,7 +13,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "build": "browserify example/index.js -o example/build.js -dv -t cssnextify",
+    "build": "browserify example/index.js -o example/build.js -dv -t cssnextify -t [ babelify --presets [ es2015 react ] ]",
     "prepublish": "babel lib --presets es2015,react --out-dir dist",
     "test": "npm run prepublish && xo && ava"
   },
@@ -52,19 +52,6 @@
     "suitcss-base": "^1.0.1",
     "suitcss-components-arrange": "^1.1.0",
     "xo": "*"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015",
-            "react"
-          ]
-        }
-      ]
-    ]
   },
   "xo": {
     "envs": [
